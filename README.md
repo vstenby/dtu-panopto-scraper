@@ -1,5 +1,6 @@
 # dtu-panopto-scraper
-Download videos, descriptions and subtitles from [panopto.dtu.dk](https://panopto.dtu.dk/). 
+
+Download videos, descriptions and subtitles from [panopto.dtu.dk](https://panopto.dtu.dk/). Note that this requires a DTU login to [panopto.dtu.dk](https://panopto.dtu.dk) and can therefore only be used by students at the Technical University of Denmark. 
 
 ## Installation
 
