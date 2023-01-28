@@ -32,7 +32,7 @@ def main():
         help="create-folder = True if you want to create a subfolder in the export folder.",
     )
     args.add_argument(
-        "--no-video", default=False, action="store_true", help="Skip video download."
+        "--no-lecture", default=False, action="store_true", help="Skip downloading the lecture."
     )
     args.add_argument(
         "--skip-existing",
@@ -108,11 +108,12 @@ def main():
         m3u8_paths = scrape_utils.scrape_m3u8(driver, out_dir=dst, title=title)
 
         # Download the video to whichever format is specified.
-        for m3u8_path in m3u8_paths:
-            ffmpeg_utils.download(
-                m3u8_path=m3u8_path, out_format=f".{args.download_type}"
-            )
-
+        if not args.no_lecture:
+            for m3u8_path in m3u8_paths:
+                ffmpeg_utils.download(
+                    m3u8_path=m3u8_path, out_format=f".{args.download_type}"
+                )
+            
         # Extract the video duration from the m3u8 file.
         info["video_duration"] = scrape_utils.extract_video_duration(m3u8_paths[0])
 
