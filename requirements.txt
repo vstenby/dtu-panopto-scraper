@@ -1,0 +1,7 @@
+beautifulsoup4==4.11.1
+retry==0.9.2
+selenium==4.8.0
+selenium_wire==5.1.0
+tqdm==4.64.1
+unicode_slugify==0.1.5
+webdriver_manager==3.8.5
